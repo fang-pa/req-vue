@@ -54,7 +54,6 @@ export default {
     async LoginUser() {
       try {
         const res = await axios.post("/user/login", this.login);
-        console.log(res)
         const token = res.data.token;
         if (token) {
           localStorage.setItem("token", token);
