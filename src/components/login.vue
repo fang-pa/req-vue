@@ -54,7 +54,7 @@ export default {
   methods: {
     async LoginUser() {
       try {
-        const res = await axios.post("/user/login", this.data);
+        const res = await axios.post("/user/login", {userID,password});
         const token = res.data.token;
         if (token) {
           localStorage.setItem("token", token);
