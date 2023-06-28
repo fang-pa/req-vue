@@ -66,11 +66,11 @@ export default {
       window.location.reload();
       localStorage.setItem("refresh", "1");
     }
-    axios
-      .get("/home")
-      .then((res) => {
-        this.showReq = res.data;
-      })
+    // axios
+    //   .get("/home")
+    //   .then((res) => {
+    //     this.showReq = res.data;
+    //   })
       axios
         .get("/auth")
         .then((res) => {
