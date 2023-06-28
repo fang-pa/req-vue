@@ -10,7 +10,7 @@
             <span class="far fa-user"></span>
             <input
               name="userName"
-              v-model="login.userID"
+              v-model="userID"
               type="text"
               class="form-control"
               id="userName"
@@ -21,7 +21,7 @@
           <div class="form-field d-flex align-items-center">
             <span class="fas fa-key"></span>
             <input
-              v-model="login.password"
+              v-model="password"
               name="password"
               type="password"
               class="form-control"
@@ -47,13 +47,14 @@ export default {
   name: "LogIn",
   data() {
     return {
-      login: {},
+      userID:'',
+      password: ''
     };
   },
   methods: {
     async LoginUser() {
       try {
-        const res = await axios.post("/user/login", this.login);
+        const res = await axios.post("/user/login", this.data);
         const token = res.data.token;
         if (token) {
           localStorage.setItem("token", token);
